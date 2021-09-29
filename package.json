@@ -1,0 +1,14 @@
+{
+  "name": "tat-cypress-basico",
+  "version": "1.0.0",
+  "description": "npm init\r npm install cypress --dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "George Mathias",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^8.5.0"
+  }
+}
