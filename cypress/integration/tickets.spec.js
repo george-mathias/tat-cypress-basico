@@ -20,8 +20,12 @@ describe('Tickets', () => {
         cy.get('.success > p').should('contain', 'Ticket(s) successfully ordered.')
     })
 
-    it.only('select two tickets', () => {
+    it('select two tickets', () => {
         cy.get('#ticket-quantity').select('2')
+    });
+
+    it.only('select "vip" ticket type', () => {
+        cy.get('#vip').check();
     });
 
     it("has 'ticketbox' header's heading", () => {});
