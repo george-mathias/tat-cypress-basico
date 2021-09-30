@@ -57,7 +57,7 @@ describe('Tickets', () => {
     });
 
 
-    it.only('fills and reset the form', () => {
+    it('fills and reset the form', () => {
       const firstName = 'George'
       const lastName = 'Mathias'
       const quantity = '2'
@@ -82,9 +82,26 @@ describe('Tickets', () => {
       cy.get('button[type="submit"]')
         .as('sbumtButton')
         .should('not.be.disabled')
-        
+
       cy.get('[type="submit"]').click()
       cy.get('.success > p').should('contain', 'Ticket(s) successfully ordered.')
     });
 
+    it.only('filss mandatory using support command', () => {
+      const customer = {
+        firstName: 'João',
+        lastName: 'Silva',
+        email: 'joaosilva@example.com'
+      }
+
+      cy.fillMandatoryFields(customer)
+
+      cy.get('button[type="submit"]')
+        .as('submitButton')
+        .should('not.be.disabled')
+
+      cy.get('#agree').uncheck()
+
+      cy.get('@submitButton').should('be.disabled')
+    });
 })
