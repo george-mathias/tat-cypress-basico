@@ -87,7 +87,7 @@ describe('Tickets', () => {
       cy.get('.success > p').should('contain', 'Ticket(s) successfully ordered.')
     });
 
-    it.only('filss mandatory using support command', () => {
+    it('filss mandatory using support command', () => {
       const customer = {
         firstName: 'João',
         lastName: 'Silva',

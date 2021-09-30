@@ -4,7 +4,7 @@
   "description": "npm init\r npm install cypress --dev",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run"
   },
   "author": "George Mathias",
   "license": "MIT",
